@@ -12,11 +12,7 @@ install:
   - pip install poetry
   - poetry install -vvv
 script:
-  - python
-  - python -m httprunner.cli hrun -v
-  - python -m httprunner.cli hrun -h
-  - poetry build
-  - poetry runn coverage run --source=howawrs_apitest -m pytest -v
+  - poetry run coverage run --source=pytest_requests -m pytest -v --showlocals
+  - poetry run coverage report -m
 after_success:
   - poetry run coveralls
-

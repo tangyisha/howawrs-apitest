@@ -16,7 +16,7 @@ script:
   - python -m httprunner.cli hrun -v
   - python -m httprunner.cli hrun -h
   - poetry build
-  - poetry runn coverage run --source=howawrs-apitest -m pytest -v
+  - poetry runn coverage run --source=howawrs_apitest -m pytest -v
 after_success:
   - poetry run coveralls
 
